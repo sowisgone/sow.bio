@@ -33,7 +33,7 @@ document.documentElement.style.setProperty('--clr-cyan-txt-shadow', clrCyanTxtSh
 document.documentElement.style.setProperty('--clr-bg', clrBg);
 document.documentElement.style.setProperty('--clr-bg-tippy', clrBgTippy);
 document.documentElement.style.setProperty('--bg-img', bgImage);
-document.documentElement.style.setProperty('--bg-card', clrBgCard);
+document.documentElement.style.setProperty('--clr-card', clrBgCard);
 }
 
 function themeSwitcher() {
