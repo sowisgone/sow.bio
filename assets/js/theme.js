@@ -9,6 +9,7 @@ function themeApply() {
     clrCyanTxtShadow = '#70219e';
     clrBg = '#160d1a';
     clrBgTippy = '#1c1324';
+    clrBgCard = '#1e1224';
     bgImage = 'url("../img/bg_purple.svg")';
 } else if (themeCounter === '1') {
     // ciano
@@ -16,6 +17,7 @@ function themeApply() {
     clrCyanTxtShadow = '#219a9e';
     clrBg = '#0d1a1a';
     clrBgTippy = '#132424';
+    clrBgCard = '#102020';
     bgImage = 'url("../img/bg_cyan.svg")';
 } else {
     // vermelho
@@ -31,6 +33,7 @@ document.documentElement.style.setProperty('--clr-cyan-txt-shadow', clrCyanTxtSh
 document.documentElement.style.setProperty('--clr-bg', clrBg);
 document.documentElement.style.setProperty('--clr-bg-tippy', clrBgTippy);
 document.documentElement.style.setProperty('--bg-img', bgImage);
+document.documentElement.style.setProperty('--bg-card', clrBgCard);
 }
 
 function themeSwitcher() {
