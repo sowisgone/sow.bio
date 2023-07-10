@@ -13,6 +13,7 @@
     --clr-cyan-txt-shadow: #219a9e;
     --clr-bg: #0d1a1a;
     --clr-bg-tippy: #132424;
+    --clr-card: #102020;
     --bg-img: url("../img/bg_cyan.svg");
 }
 body{
@@ -32,7 +33,7 @@ body{
 }
 
 .floating-card{
-    background-color: (--clr-bg);
+    background-color: (--clr-card);
     color: #e0fdff;
 
     border-radius: 10px;
