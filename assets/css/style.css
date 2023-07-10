@@ -33,7 +33,7 @@ body{
 }
 
 .floating-card{
-    background-color: (--clr-card);
+    background-color: var(--clr-card);
     color: #e0fdff;
 
     border-radius: 10px;
