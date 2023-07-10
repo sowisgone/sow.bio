@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sow_home.txt</title>
+
+    <!--Import css-->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--Import poppins google font-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+
+    <!--Import js-->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <!--Import animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!--Import lanyard-->
+    <script rel="preload" src="https://cdn.jsdelivr.net/gh/xaronnn/js-lanyard/lanyard.js"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script rel="preload">
+        lanyard({
+            userId: '616731583386353665',
+            socket: 'true',
+            onPresenceUpdate: data => {
+                console.log(data);
+
+                const spotify_status = data.listening_to_spotify
+
+                if (spotify_status === true) {
+                    document.getElementById('spotify').innerHTML = `<a target="_blank" href="https://open.spotify.com/track/${data.spotify.track_id}"> 📻 <span class="cyan-listening">Listening</span> ${data.spotify.artist} - ${data.spotify.song}</a>`;
+                } else {
+                    document.getElementById('spotify').innerHTML = `📻 <span class="cyan-txt">Not listening</span> to anything`;
+                }
+
+
+                document.getElementById('pfp_img').innerHTML = `<img class="pfp ${data.discord_status}" id="pfp" src="https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png?size=256" alt="pfp">`
+                tippy('#pfp', {
+                    content: `@${data.discord_user.username} at Discord`,
+                    animation: 'fade',
+                    theme: 'tomato',
+                    arrow: false,
+                });
+            }
+        })
+
+    </script>
+
+
+
+
+    <!--Icon-->
+    <link rel="icon" href="assets/img/icon.png">
+
+    <!--Import font awesome-->
+    <script src="https://cdn.discordapp.com/attachments/958411092290330715/958451081724178432/cdn.js"></script>
+</head>
+<body id="teste">
+
+    <!--Profile-->
+    <div class="container">
+        <span class="bounce">
+        <div class="floating-card">
+            <div class="profile-container">
+                <div class="img" id="pfp_img">
+                    <!-- <img class="pfp" src="assets/img/pfp1.png" alt=""> -->
+                </div>
+
+                <div class="txt" id="txt">
+                    <h1 class="title">what's up,<span class="cyan-title-sow" id="theme"> sow</span> here!</h1>
+                    <p class="description">Im 15y/o and I love <span class="cyan-txt">gaming</span>, <span class="cyan-txt">music</span> and <span class="cyan-txt">coding</span>!</p>
+                    <p class="spotify" id="spotify"></p>
+                </div>
+            </div>
+            <div class="lnks">
+                <a href="projects.html">/projects</a>
+                <a href="socials.html">/socials</a>
+            </div>
+            <br>
+            <p class="mini-footer">original design by: fubo</p>
+        </div>
+         </span>
+    </div>    
+
+</body>
+</html>
