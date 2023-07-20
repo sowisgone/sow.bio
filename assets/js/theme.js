@@ -24,8 +24,8 @@ function themeApply() {
     clrCyanTxt = '#cb6154';
     clrCyanTxtShadow = '#b73d2a';
     clrBg = '#1b1b1a';
+    clrBgCard = '#121213';
     clrBgTippy = '#1b1b1a';
-    clrBgCard = '#1b1b1a';
     bgImage = 'url("../img/bg_red.svg")';
 }
 
