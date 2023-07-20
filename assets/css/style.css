@@ -179,7 +179,6 @@ body{
     transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
     display: inline-block;
 
-    cursor: default;
   }
 
 @keyframes wave-animation {
@@ -274,6 +273,6 @@ body{
     font-size: 14px;
     transition: all 0.3s ease;
 
-    cursor: pointer;
+
 }
 
