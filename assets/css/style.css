@@ -1,12 +1,6 @@
 *{
     font-family: 'Poppins', sans-serif;
-
-    /* 
-    #1b1b1a
-    #cb6161
-    #b74b4a 
-    #ffd1d1
-    */
+    cursor: none;
 }
 :root{
     --clr-cyan-txt: #3ac4ce;
@@ -24,6 +18,27 @@ body{
     background-image: var(--bg-img);
     background-size: cover;
 }
+.inner-cursor {
+    position: fixed;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    mix-blend-mode: hard-light;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: width 0.5s, height 0.5s;
+    transition: 0.1s;
+    z-index: 99;
+}
+
+.inner-cursor.grow {
+    width: 20px;
+    height: 20px;
+    transition: width 0.5s, height 0.5s;
+}
+
 
 .container{
     height: 100vh;
@@ -53,7 +68,6 @@ body{
 }
 .cyan-title-sow{
     color: var(--clr-cyan-txt);
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 .cyan-title-sow:hover{
@@ -157,9 +171,7 @@ body{
     color: var(--clr-cyan-txt-shadow);
     padding-top: 10px;
 }
-#theme {
-    cursor: pointer;
-}
+
 .wave {
     animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
     animation-duration: 2.5s;        /* Change to speed up or slow down */
@@ -264,3 +276,4 @@ body{
 
     cursor: pointer;
 }
+
