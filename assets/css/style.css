@@ -1,278 +1,66 @@
-*{
-    font-family: 'Poppins', sans-serif;
-    cursor: none;
-}
-:root{
-    --clr-cyan-txt: #3ac4ce;
-    --clr-cyan-txt-shadow: #219a9e;
-    --clr-bg: #0d1a1a;
-    --clr-bg-tippy: #132424;
-    --clr-card: #102020;
-    --bg-img: url("../img/bg_cyan.svg");
-}
-body{
-    background-color: var(--clr-bg);
-    margin: 0;
-    padding: 0;
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
 
-    background-image: var(--bg-img);
-    background-size: cover;
-}
-.inner-cursor {
-    position: fixed;
-    left: 10px;
-    width: 15px;
-    height: 15px;
-    transform: translate(-50%, -50%);
-    background-color: aliceblue;
-    mix-blend-mode: hard-light;
-    border-radius: 50%;
-    pointer-events: none;
-    transition: width 0.5s, height 0.5s;
-    transition: 0.1s;
-    z-index: 99;
+    --background-color: #000;
+  --page-width: 60em;
+  --font-color: #fff;
+  --invert-font-color: #000;
+  --primary-color: #ffffff;
+  --secondary-color: #fff;
+  --error-color: #d20962;
+  --progress-bar-background: #3b3b3b;
+  --progress-bar-fill: #ffffff;
+  --code-bg-color: #e8eff2;
+  --input-style: solid;
+  
+
+  --status-color: #57F287;
 }
 
-.inner-cursor.grow {
-    width: 20px;
+.pfp__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Adicionado para que as posições absolutas sejam relativas a este contêiner */
+}
+
+.image-overlay-container {
+    position: relative; /* Importante para que os elementos filhos usem posições absolutas em relação a este contêiner */
+}
+
+.overlay__container {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: var(--status-color);
+    border: 2px solid var(--background-color);
+    border-radius: 100%;
+    bottom: 10px; /* Ajuste a posição vertical em relação à imagem */
+    right: 10px; /* Ajuste a posição horizontal em relação à imagem */
+}
+
+.overlay__map {
+    position: absolute;
     height: 20px;
-    transition: width 0.5s, height 0.5s;
+    width: 20px;
+    background-image: url("https://twemoji.maxcdn.com/2/svg/1f4cd.svg");
+
+    bottom: 35px; /* Ajuste a posição vertical em relação à imagem */
+    right: 195px; /* Ajuste a posição horizontal em relação à imagem */
+}
+/* ... Seu código existente ... */
+
+.splide__list {
+    margin-left: 10px;
 }
 
-
-.container{
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+.splide__slide{
+    margin-left: 24000px;
 }
 
-.floating-card{
-    background-color: var(--clr-card);
-    color: #e0fdff;
-
-    border-radius: 10px;
-    padding: 20px;
-
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.title{
-    margin-bottom: 5px;
-}
-
-.cyan-title{
-    color: var(--clr-cyan-txt);
-
-    transition: all 0.3s ease;
-}
-.cyan-title-sow{
-    color: var(--clr-cyan-txt);
-    transition: all 0.3s ease;
-}
-.cyan-title-sow:hover{
-    color: var(--clr-cyan-txt-shadow);
-    font-size: 35px;
-}
-.cyan-listening{
-    color: var(--clr-cyan-txt);
-
-    transition: all 0.3s ease;
-}
-.cyan-title:hover{
-    color: var(--clr-cyan-txt-shadow);
-    font-size: 35px;
-}
-.cyan-txt{
-    color: var(--clr-cyan-txt);
-
-    transition: all 0.3s ease;
-}
-.cyan-listening:hover{
-    color: var(--clr-cyan-txt-shadow);
-    font-size: 17px;
-}
-
-.description{
-    margin-top: 0px;
-}
-
-.profile-container{
+.image_container{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.pfp{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-
-    margin-right: 20px;
-    margin-top: 40px;
-    border-radius: 50%;
-}
-
-.offline{
-    border: 3px solid #757e8d;
-}
-
-.online{
-    border: 3px solid var(--clr-cyan-txt);
-}
-
-.idle{
-    border: 3px solid #f39c12;
-}
-
-.dnd{
-    border: 3px solid #e74c3c;
-}
-
-.lnks{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lnks a{
-    margin-right: 20px;
-
-    color: var(--clr-cyan-txt-shadow);
-    text-decoration: none;
-
-    transition: all 0.3s ease;
-}
-
-.lnks a:hover{
-    color: var(--clr-cyan-txt);
-    font-size: 17px;
-}
-
-.spotify{
-    font-size: 14px;
-}
-
-.mini-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 9px;
-}
-
-.animate__animated.animate__fadeInDown {
-    --animate-duration: 1s;
-    --animate-delay: 6s;
-}
-
-.music-icon{
-    color: var(--clr-cyan-txt-shadow);
-    padding-top: 10px;
-}
-
-.wave {
-    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.5s;        /* Change to speed up or slow down */
-    animation-iteration-count: infinite;  /* Never stop waving :) */
-    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
-    display: inline-block;
-
-  }
-
-@keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-  100% { transform: rotate( 0.0deg) }
-}
-
-.tippy-box[data-theme~='tomato'] {
-    background-color: (--clr-bg-tippy);
-    color: #fff;
-  }
-
-@media screen and (max-width: 768px) {
-    .title{
-        font-size: 20px;
-    }
-
-    .description{
-        font-size: 15px;
-    }
-
-    .spotify a{
-        font-size: 10px;
-    }
-
-    .pfp{
-        width: 70px;
-        height: 70px;
-        margin-bottom: 10px;
-
-        margin-right: 10px;
-        margin-top: 20px;
-        border-radius: 50%;
-    }
-
-    body{
-        background-image: url('../img/bg2.svg');
-    }
-}
-
-.socials{
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.description a{
-    color: var(--clr-cyan-txt-shadow);
-    text-decoration: none;
-
-    transition: all 0.3s ease;
-}
-
-.description a:hover{
-    color: var(--clr-cyan-txt);
-    font-size: 17px;
-}
-
-.bounce{
-    animation-name: float;  /* Refers to the name of your @keyframes element below */
-    animation-duration: 4s;        /* Change to speed up or slow down */
-    animation-iteration-count: infinite;  /* Never stop waving :) */
-    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
-    display: inline-block;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-   50% { transform: translateY(-10px); }
-   100% { transform: translateY(0px); }
-}
-
-.spotify a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-
-    transition: all 0.3s ease;
-}
-
-.play-btn{
-    color: var(--clr-cyan-txt);
-    background-color: (--clr-bg-tippy);
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-
-
-}
-
