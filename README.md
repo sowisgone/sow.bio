@@ -1,3 +1,3 @@
-# sow.is-a.dev
+# sow.lol
 
-personal website, forked by my homie fubo.bio
+personal website, developed by Fubo & Me.
